@@ -27,6 +27,7 @@
       <td th:text="${juego.descripcion}"></td>
       <td th:text="${juego.precio}"></td>
       <td><a class="btn btn-primary" th:href="@{'/juegos/editar?id=' + ${juego.idjuego}}">Editar</a></td>
+      <td><a class="btn btn-danger" >Borrar</a></td>
 
     </tr>
   </table>
