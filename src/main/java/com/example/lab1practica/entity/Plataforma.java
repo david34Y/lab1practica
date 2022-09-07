@@ -8,13 +8,13 @@ import java.util.Objects;
 public class Plataforma {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "idplataforma")
+    @Column(name = "idplataforma",nullable = false)
     private int idplataforma;
     @Basic
-    @Column(name = "nombre")
+    @Column(name = "nombre" , length = 50)
     private String nombre;
     @Basic
-    @Column(name = "descripcion")
+    @Column(name = "descripcion" ,length = 200)
     private String descripcion;
 
     public int getIdplataforma() {
@@ -41,16 +41,5 @@ public class Plataforma {
         this.descripcion = descripcion;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Plataforma that = (Plataforma) o;
-        return idplataforma == that.idplataforma && Objects.equals(nombre, that.nombre) && Objects.equals(descripcion, that.descripcion);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(idplataforma, nombre, descripcion);
-    }
 }
