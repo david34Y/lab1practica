@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lista Distribuidoras</title>
+  <title>Lista Juegos</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
         crossorigin="anonymous">
@@ -11,7 +11,7 @@
 <body>
 <div class="container">
   <h2 class="pb-2 pt-2 border-bottom">Lista de Juegos</h2>
-  <a class="btn btn-primary mt-4 mb-4" th:href="@{/distribuidoras/nuevo}">Nueva Distribuidora</a>
+
   <table class="table table-sm">
     <tr>
       <th>#</th>
@@ -21,13 +21,13 @@
       <th></th>
       <th></th>
     </tr>
-    <tr th:each="juego,i : ${juegosList}">
+    <tr th:each="juego,i : ${gamesList}">
       <td th:text="${i.index + 1}"></td>
       <td th:text="${juego.nombre}"></td>
       <td th:text="${juego.descripcion}"></td>
       <td th:text="${juego.precio}"></td>
       <td><a class="btn btn-primary" th:href="@{'/juegos/editar?id=' + ${juego.id}}">Editar</a></td>
-      <td><a class="btn btn-danger" th:href="@{'/juegos/borrar?id=' + ${juego.id}}">Borrar</a></td>
+
     </tr>
   </table>
 </div>
