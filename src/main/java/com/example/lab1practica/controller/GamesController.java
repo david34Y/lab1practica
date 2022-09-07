@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("juego")
+@RequestMapping("juegos")
 public class GamesController {
 
 
