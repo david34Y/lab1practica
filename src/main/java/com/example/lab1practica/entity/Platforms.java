@@ -1,8 +1,5 @@
 package com.example.lab1practica.entity;
 
-public class Games {
-<<<<<<< HEAD
-=======
+public class Platforms {
     /** Completar*/
->>>>>>> origin/master
 }
