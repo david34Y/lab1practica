@@ -23,18 +23,18 @@ public class DistribuidoraController {
     public String listaDistribuidoras (Model model){
         List<Distribuidora> distribuidoraList = distributorsRepository.findByOrderByNombre();
         model.addAttribute("distribuidoraList", distribuidoraList);
-        return "lista";
+        return "/distribuidoras/lista";
     }
 
     @GetMapping(value={"/nuevo"})
     public String nuevaDistribuidoras(){
-        return "nuevo";
+        return "/distribuidoras/nuevo";
     }
 
     @PostMapping(value = {"/guardar"})
     public String guardarDistribuidoras(Distribuidora distribuidora){
         distributorsRepository.save(distribuidora);
-        return "redirect:lista";
+        return "redirect:/distribuidoras/lista";
     }
 
     @GetMapping(value = {"/editar"})
@@ -44,9 +44,9 @@ public class DistribuidoraController {
         if(optionalDistributors.isPresent()){
             Distribuidora distribuidora = optionalDistributors.get();
             model.addAttribute("distribuidora",distribuidora);
-            return "editar";
+            return "/distribuidoras/editar";
         }else{
-            return "redirect:lista";
+            return "redirect:/distribuidoras/lista";
         }
     }
 
@@ -56,6 +56,6 @@ public class DistribuidoraController {
         if(optionalDistributors.isPresent()){
             distributorsRepository.deleteById(id);
         }
-        return "redirect:lista";
+        return "redirect:/distribuidoras/lista";
     }
 }
