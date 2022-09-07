@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Nueva Distribuidora</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+</head>
+<body class="container">
+<h2>Nuevo Transportista</h2><hr />
+<form method="post" th:action="@{'/distribuidoras/guardar'}" th:object="${distribuidora}">
+  <input type="hidden" th:field="*{iddistribuidora}">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input name="nombre" type="text" class="form-control" id="nombre" th:field="*{nombre}">
+  </div>
+  <div class="form-group">
+    <label for="fundacion">Fundación</label>
+    <input name="fundacion" type="text" class="form-control" id="fundacion" th:field="*{fundacion}">
+  </div>
+  <div class="form-group">
+    <label for="sede">Sede</label>
+    <input name="sede" type="text" class="form-control" id="sede" th:field="*{sede}">
+  </div>
+  <a th:href="@{'/distribuidoras/lista'}" class="btn btn-danger">Cancelar</a>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+</body>
+</html>
